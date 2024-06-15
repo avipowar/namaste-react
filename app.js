@@ -18,20 +18,31 @@ import ReactDOM from "react-dom/client";
 const num = 10000;
 
 // React Component Compostions
-const HeadingComponent = () => (
-  <div id="container">
+const HeadingComponent = () =>
+  (<div id="container">
     {/* {heading} */}
     <h1 className="heading">Namsate React Functional Component</h1>
-  </div>
-);
+  </div>)(
+    <div id="container">
+      {/* {heading} */}
+      <h1 className="heading">Namsate React Functional Component</h1>
+    </div>
+  );
 
-const heading = (
+const heading =
   // ((<HeadingComponent />),
-  <h1 className="head" tabIndex="5">
-    <h1>{num}</h1>
-    Hiii I am Avinash
-  </h1>
-);
+  ((
+    <h1 className="head" tabIndex="5">
+      <h1>{num}</h1>
+      Hiii I am Avinash
+    </h1>
+  ),
+  (
+    <h1 className="head" tabIndex="5">
+      <h1>{num}</h1>
+      Hiii I am Avinash
+    </h1>
+  ));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
