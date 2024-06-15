@@ -25,14 +25,13 @@ const HeadingComponent = () => (
   </div>
 );
 
-const heading =
-  ((<HeadingComponent />),
-  (
-    <h1 className="head" tabIndex="5">
-      <h1>{num}</h1>
-      Hiii I am Avinash
-    </h1>
-  ));
+const heading = (
+  // ((<HeadingComponent />),
+  <h1 className="head" tabIndex="5">
+    <h1>{num}</h1>
+    Hiii I am Avinash
+  </h1>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
