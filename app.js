@@ -14,39 +14,88 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// Recat Element
-const num = 10000;
+/**
+ * Header
+ *    - Logo
+ *    - Nav Items
+ * Body
+ *    - Search
+ *    - RestaurantContainer
+ *        - RestaurantCard
+ * Footer
+ *    - copyright
+ *    - Links
+ *    - Address
+ *    - Contact
+ */
 
-// React Component Compostions
-const HeadingComponent = () =>
-  (<div id="container">
-    {/* {heading} */}
-    <h1 className="heading">Namsate React Functional Component</h1>
-  </div>)(
-    <div id="container">
-      {/* {heading} */}
-      <h1 className="heading">Namsate React Functional Component</h1>
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=fast-food&txt_keyword=All"
+          alt=""
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
   );
+};
 
-const heading =
-  // ((<HeadingComponent />),
-  ((
-    <h1 className="head" tabIndex="5">
-      <h1>{num}</h1>
-      Hiii I am Avinash
-    </h1>
-  ),
-  (
-    <h1 className="head" tabIndex="5">
-      <h1>{num}</h1>
-      Hiii I am Avinash
-    </h1>
-  ));
+const AppLayout = () => {
+  // in applayout all the component init
+  return (
+    <div className="app">
+      <Header />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
 
-root.render(heading);
+// // Recat Element
+// const num = 10000;
+
+// // React Component Compostions
+// const HeadingComponent = () =>
+//   (<div id="container">
+//     {/* {heading} */}
+//     <h1 className="heading">Namsate React Functional Component</h1>
+//   </div>)(
+//     <div id="container">
+//       {/* {heading} */}
+//       <h1 className="heading">Namsate React Functional Component</h1>
+//     </div>
+//   );
+
+// const heading =
+//   // ((<HeadingComponent />),
+//   ((
+//     <h1 className="head" tabIndex="5">
+//       <h1>{num}</h1>
+//       Hiii I am Avinash
+//     </h1>
+//   ),
+//   (
+//     <h1 className="head" tabIndex="5">
+//       <h1>{num}</h1>
+//       Hiii I am Avinash
+//     </h1>
+//   ));
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(heading);
 
 // const heading = React.createElement("h1", { id: "heaing" }, "This is Avinash");
 // // console.log("heading");
