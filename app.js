@@ -22,6 +22,8 @@ import ReactDOM from "react-dom/client";
  *    - Search
  *    - RestaurantContainer
  *        - RestaurantCard
+ *          - img
+ *          - Name Of Res, Star Rating, cuisine, delivery time
  * Footer
  *    - copyright
  *    - Links
@@ -51,11 +53,50 @@ const Header = () => {
   );
 };
 
+const RestaurantCard = () => {
+  return (
+    <div className="res-card">
+      <img
+        className="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/binzeiptfxt3rqbo7lgb"
+        alt="res-logo"
+      />
+      <h3>Meghana Foods</h3>
+      <h4>Biryani, North Indian, Asian</h4>
+      <h4>4.4 stars</h4>
+      <h4>38 minutes</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
+
 const AppLayout = () => {
   // in applayout all the component init
   return (
     <div className="app">
       <Header />
+      <Body />
     </div>
   );
 };
