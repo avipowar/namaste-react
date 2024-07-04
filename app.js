@@ -53,7 +53,13 @@ const Header = () => {
   );
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  // console.log(props);
+  // const { passData } = props;
+  const { name, rating } = props.passData;
+  console.log(name);
+  // console.log(passData);
+  // console.log(props);
   return (
     <div className="res-card">
       <img
@@ -61,7 +67,7 @@ const RestaurantCard = () => {
         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/binzeiptfxt3rqbo7lgb"
         alt="res-logo"
       />
-      <h3>Meghana Foods</h3>
+      <h3>Meghana foods</h3>
       <h4>Biryani, North Indian, Asian</h4>
       <h4>4.4 stars</h4>
       <h4>38 minutes</h4>
@@ -69,23 +75,17 @@ const RestaurantCard = () => {
   );
 };
 
+const data = {
+  name: "Avi",
+  rating: "4.0",
+};
+
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
+        <RestaurantCard passData={data} />
       </div>
     </div>
   );
