@@ -33,10 +33,10 @@
 }
 
 .res-card{
-    height: 320px;
+    background-color: lightgray;
     width: 200px;
-    background-color: grey;
     padding: 5px;
+    margin: 5px;
 }
 
 .res-card:hover {
