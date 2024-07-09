@@ -29,3 +29,7 @@ Two Types Of Export/Import
 
   export const Component
   import {Component Name} from path
+
+# React Hooks
+
+(Normal Js utility function)
