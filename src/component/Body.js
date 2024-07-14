@@ -26,6 +26,8 @@ const Body = () => {
     setListOfRestaurants(showData);
   };
 
+  console.log(json, "🚀🚀🚀🚀🚀🚀😊😊😊");
+
   return (
     <div className="body">
       <div className="search">
