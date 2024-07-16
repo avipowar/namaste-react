@@ -1,5 +1,6 @@
 import RestaurantCard from "./Restaurant";
-import resList from "../utils/mockData";
+// import resList from "../utils/mockData";
+import Shimmer  from "./shimmerUi";
 import { useEffect, useState } from "react";
 
 const Body = () => {
@@ -17,7 +18,7 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json, "🚀🚀🚀🚀🚀🚀😊😊😊");
+    console.log(json , "🚀🚀🚀🚀🚀🚀😊😊😊");
 
     const showData =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -26,7 +27,9 @@ const Body = () => {
     setListOfRestaurants(showData);
   };
 
-  console.log(json, "🚀🚀🚀🚀🚀🚀😊😊😊");
+  if (listOfRestaurants.length === 0){
+    return <Shimmer/>
+  }
 
   return (
     <div className="body">
