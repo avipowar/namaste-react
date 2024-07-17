@@ -75,3 +75,13 @@
     height: 400px;
     background-color: #f0f0f0;
 }
+
+.login-btn{
+    height: 30px;
+    width: 80px;
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
