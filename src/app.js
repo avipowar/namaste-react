@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "../src/component/Header";
 import Body from "../src/component/Body";
+import About from "./component/About";
+import Error from "./component/Error";
+import Contact from "./component/Contact";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const AppLayout = () => {
   // in applayout all the component init
@@ -13,8 +17,24 @@ const AppLayout = () => {
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
 
 // // Recat Element
 // const num = 10000;
