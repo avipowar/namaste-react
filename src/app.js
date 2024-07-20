@@ -5,14 +5,14 @@ import Body from "../src/component/Body";
 import About from "./component/About";
 import Error from "./component/Error";
 import Contact from "./component/Contact";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   // in applayout all the component init
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
@@ -21,15 +21,21 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
   },
 ]);
 
