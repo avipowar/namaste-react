@@ -31,7 +31,7 @@ const Body = () => {
   };
 
   // Conditional Rendering
-  // if (listOfRestaurants.length === 0){
+  // if (listOfRestaurants.length === 0){  
   //   return <Shimmer/>
   // }
 
@@ -91,3 +91,4 @@ const Body = () => {
 };
 
 export default Body;
+
