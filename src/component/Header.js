@@ -5,17 +5,15 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
-  const onlineStatus = useOnlineStatus()
+  const onlineStatus = useOnlineStatus();
   return (
-    <div className="flex justify-between bg-white shadow-md p-3">
+    <div className="flex justify-between bg-white shadow-md p-2">
       <div className="logo-container">
-        <img className="w-32 pt-6 " src={LOGO_URL} alt="" />
+        <img className="w-24 pt-2 " src={LOGO_URL} alt="" />
       </div>
       <div className="flex items-center">
-        <ul className="flex p-4 m-4">
-          <li className="p-4">
-            Online Status: {onlineStatus ? "✅" : "🛑"}
-          </li>
+        <ul className="flex p-2 ">
+          <li className="p-4">Online Status: {onlineStatus ? "✅" : "🛑"}</li>
           <li className="p-4">
             <Link to="/"> Home </Link>
           </li>

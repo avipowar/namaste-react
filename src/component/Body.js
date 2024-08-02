@@ -24,22 +24,26 @@ const Body = () => {
     const json = await data.json();
 
     const showData =
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    console.log(json, "🚀🚀🚀🚀")
+
     setListOfRestaurants(showData);
     setFilterRestaurant(showData);
   };
 
   const onlineStatus = useOnlineStatus();
 
-  if (onlineStatus === false){
-    return <h1> Looks like you're Offline!! Please Check Your Internet Connection</h1>
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        {" "}
+        Looks like you're Offline!! Please Check Your Internet Connection
+      </h1>
+    );
   }
 
-
   // Conditional Rendering
-  // if (listOfRestaurants.length === 0){  
+  // if (listOfRestaurants.length === 0){
   //   return <Shimmer/>
   // }
 
@@ -101,4 +105,3 @@ const Body = () => {
 };
 
 export default Body;
-
