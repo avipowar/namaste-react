@@ -2,8 +2,9 @@ import RestaurantCard from "./Restaurant";
 // import resList from "../utils/mockData";
 import Shimmer from "./shimmerUi";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // State Variable
@@ -41,6 +42,8 @@ const Body = () => {
       </h1>
     );
   }
+
+  const { setUserName, loggedInUser } = useContext(UserContext);
 
   // Conditional Rendering
   // if (listOfRestaurants.length === 0){
@@ -88,6 +91,14 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="mt-4">
+          <label className="m-3">userName: </label>
+          <input
+            className="p-1 border border-black"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">
