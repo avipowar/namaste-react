@@ -1,4 +1,4 @@
-import React, { lazy, Suspense} from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "../src/component/Header";
 import Body from "../src/component/Body";
@@ -7,6 +7,8 @@ import Error from "./component/Error";
 import Contact from "./component/Contact";
 import RestaurantMenu from "./component/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./utils/UserContext";
+import { useState, useEffect } from "react";
 // import Grocery from "./component/Grocery";
 
 // Chunking
@@ -15,15 +17,26 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // Lazy Loading
 // on demand loading
 
-const Grocery = lazy(()=>import("./component/Grocery"))
+const Grocery = lazy(() => import("./component/Grocery"));
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const data = {
+      name: "Avinash Powar",
+    };
+    setUserName(data.name);
+  }, []);
+
   // in applayout all the component init
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -46,8 +59,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element : <Suspense fallback={<h1>Loading.... </h1>}><Grocery/> </Suspense>,
-        
+        element: (
+          <Suspense fallback={<h1>Loading.... </h1>}>
+            <Grocery />{" "}
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resId",

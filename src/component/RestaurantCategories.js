@@ -2,8 +2,9 @@ import ItemList from "./ItemList";
 import { useState } from "react";
 const RestaurantCategory = ({ data, showItems, setShowItems }) => {
   // const { data } = props;
-
   const handleClick = () => {
+    // console.log(showItems, "😘😘");
+    // console.log("handleClick 😂");
     setShowItems();
   };
   return (
