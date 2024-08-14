@@ -38,3 +38,17 @@ There Are Two Important Hooks
 
 - useState() [This is Use To Generate SuperPowerFull State In React]
 - useEffect() []
+
+# Two Types Routing in web apps
+
+- Clinent side Routing
+- Server side Routing
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and recat-redux
+- Build Our Store
+- Conect Our Store to our app
+- slice (cartSlice)
+- dispatch(action)
+- Selector
