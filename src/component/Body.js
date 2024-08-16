@@ -8,12 +8,12 @@ import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // State Variable
-  console.log("body render");
+  // console.log("body render");
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilterRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
-    console.log("useEffect is render");
+    // console.log("useEffect is render");
     fetchData();
   }, []);
 
